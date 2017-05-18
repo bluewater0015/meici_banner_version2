@@ -15,6 +15,14 @@ let get = (url,dataType) =>{
 	})
 }
 
+let getJson = (url) => {
+	return new Promise( (resolve,reject) =>{
+		$.get(url,(data) => {
+			resolve(data);
+		})
+	})
+}
+
 let post = (url,dataType) =>{
 	return new Promise( (resolve,reject) =>{
 		$.ajax({
@@ -33,5 +41,6 @@ let post = (url,dataType) =>{
 export default get;
 export {
 	get,
-	post
+	post,
+	getJson,
 }

@@ -1,12 +1,10 @@
 import getProductServices from "../services/webServices";
+import { getJson } from "../services/baseServices";
 function headerLoad(){
 	$("#header").load("./utils/commonHtml/header.html");
 }
-function logoLoad(){
-	$("#logo").load(`./utils/commonHtml/logo.html`);
-}
-function navLoad(){
-	$("#nav").load(`./utils/commonHtml/nav.html`,function(response,status){
+function logoNavLoad(){
+	$(".logo_nav").load(`./utils/commonHtml/logo_nav.html`,function(response,status){
 		if( status == "success"){
 			getProductServices().then( data=>{
 			//console.log(response);
@@ -67,9 +65,9 @@ function navLoad(){
 						</ul>
 					</div>
 				`).mouseenter(()=>{
-					$(".nav_com").css("display","block")
+					$(".nav_com").css("display","block");
 				}).mouseleave(()=>{
-					$(".nav_com").css("display","none")
+					$(".nav_com").css("display","none");
 				})
 				
 			}
@@ -78,16 +76,31 @@ function navLoad(){
 	});
 }
 function specialLoad(){
-	$(".special").load(`./utils/commonHtml/special.html`);
+	$(".special").load(`./utils/commonHtml/special.html`,()=>{
+		getJsonImage();
+	})
+}
+function getJsonImage(){
+	getJson("../src/json/special.json").then( (data)=>{
+		console.log("=data=",data);
+		$(".getJsonImage").attr("src",data[0].url);
+		$(".getJsonImage2").attr("src",data[1].url);
+		$(".getJsonImage3").attr("src",data[2].url);
+		$(".getJsonImage4").attr("src",data[3].url);
+		$(".getJsonImage5").attr("src",data[4].url);
+	})
 }
 function specialTopLoad(){
 	$(".fashion_recommend").load(`./utils/commonHtml/specialTop.html`);
 }
+function footerLoad(){
+	$("#footer").load(`./utils/commonHtml/footer.html`);
+}
 //抛出这个函数
 export {
 	headerLoad,
-	logoLoad,
-	navLoad,
+	logoNavLoad,
 	specialLoad,
-	specialTopLoad
+	specialTopLoad,
+	footerLoad,
 }
