@@ -1,25 +1,51 @@
 //index.js
 import "./css/reset.css";
-import "./css/common.css";
+import "./css/common.less";
 require('./css/index.less');
-import { headerLoad,logoNavLoad,specialLoad,specialTopLoad,footerLoad } from "../utils/common.js";
+import { topLoad,headerLoad,logoNavLoad,specialLoad,specialTopLoad,footerLoad } from "../utils/common.js";
 $(function(){
+	topLoad();logoNavLoad
+	scrollTop();
 	banner();
 	headerLoad();
-	logoNavLoad();
 	specialLoad();
 	navMoveEvent();
 	specialTopLoad();
 	footerLoad();
 	movebanner();
 })
+function scrollTop(){
+	var top = $("#banner").offset().top;
+	console.log(top);
+	$(window).scroll( ()=>{
+		var scrollTop = $(document).scrollTop();
+
+	 	if(scrollTop > top){
+	 		$("#top").fadeIn();
+	 	}else{
+	 		$("#top").fadeOut();
+	 	}
+	})
+	// $(window).on('scroll',()=>{
+	// 	var top = $("#banner").offset().top;
+	// 	var scrollTop = $(document).scrollTop();
+
+	//  	if(scrollTop > top){
+	//  		$("#top").fadeIn();
+	//  	}else{
+	//  		$("#top").fadeOut();
+	//  	}
+	// })
+}
 function navMoveEvent(){
 	$(".follow_us").mouseenter(function(){
+		console.log($(".follow_us"));
 		$(".follow_menu").show();
 	}).mouseleave(()=>{
 		$(".follow_menu").hide();
 	})
 }
+
 function banner(){
 	var timer1 = setInterval(function(){
 			i++;
@@ -95,7 +121,7 @@ function movebanner(){
 	selectList.eq(2).clone().appendTo(select);
 	selectList.eq(3).clone().appendTo(select);
 	selectList.eq(4).clone().appendTo(select);
-	console.log("selectList:" + $(".select_ul li").length);
+	//console.log("selectList:" + $(".select_ul li").length);
 	var timer = setInterval( ()=>{
 	 	i++;
 	 	move();

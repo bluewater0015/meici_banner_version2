@@ -10,4 +10,7 @@ let getProductServices = ()=>{
 	}) 
 } 
 
-export default getProductServices;
+//export default getProductServices;
+export {
+	getProductServices,
+}
