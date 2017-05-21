@@ -11,10 +11,10 @@ function login(){
 	var name = localStorage.getItem("keyname");
 	var psw = localStorage.getItem("psw");
 	if(name){
-		$(".iphone").val(name);
+		$(".iphones").val(name);
 	}
 	if(psw){
-		$(".psw").val(psw);
+		$(".psws").val(psw);
 	}
 
 	$(".login_btn").click( ()=>{

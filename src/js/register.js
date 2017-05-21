@@ -11,8 +11,7 @@ $( ()=>{
 })
 
 function register(){
-	var name = localStorage.getItem("keyname");
-	var psw = localStorage.getItem("psw");
+	
 	// if(name){
 	// 	$(".iphone").val(name);
 	// }
@@ -69,6 +68,7 @@ function register(){
 	})
 	$(".reg_btn").click( ()=>{
 		var name = localStorage.getItem("keyname");
+		var psw = localStorage.getItem("psw");
 		if($(".select_checkbox").attr("checked",true)){
 			getRegisterServices({status:"register",userID:name,password:psw}).then( data=>{
 				console.log("===data===",data);
