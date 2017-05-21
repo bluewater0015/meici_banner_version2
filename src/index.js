@@ -4,7 +4,8 @@ import "./css/common.less";
 require('./css/index.less');
 import { topLoad,headerLoad,logoNavLoad,specialLoad,specialTopLoad,footerLoad } from "../utils/common.js";
 $(function(){
-	topLoad();logoNavLoad
+	topLoad();
+	logoNavLoad();
 	scrollTop();
 	banner();
 	headerLoad();

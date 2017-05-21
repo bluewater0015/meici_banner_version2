@@ -5,14 +5,15 @@ function topLoad(){
 	$("#top").load("../utils/commonHtml/top.html");
 }
 function headerLoad(){
-	$("#header").load("./utils/commonHtml/header.html");
+	$("#header").load("./utils/commonHtml/header.html");	
+	$("#header").load("../utils/commonHtml/header.html");
 	$("#header").load("../utils/commonHtml/header.html");
 }
 function logoNavLoad(){
 	$(".logo_nav").load(`./utils/commonHtml/logo_nav.html`,function(response,status){
 		if( status == "success"){
 			getProductServices().then( data=>{
-			//console.log(response);
+			//console.log(data);
 			for(var i=0;i<data.length;i++){
 				$(".recent").append(`
 					<div class="recent_product nav_com">
@@ -171,65 +172,13 @@ function specialTopLoad(){
 function footerLoad(){
 	$("#footer").load(`./utils/commonHtml/footer.html`);
 	$("#footer").load(`../utils/commonHtml/footer.html`);
+	$("#footer").load(`../utils/commonHtml/footer.html`);
 }
-// function goodListLoad(){
-// 	$(".list_dl0").load(`../utils/commonHtml/good_list.html`);
-// 	$(".list_dl1").load(`../utils/commonHtml/good_list.html`);
-// 	$(".list_dl2").load(`../utils/commonHtml/good_list.html`);
-// 	$(".list_dl3").load(`../utils/commonHtml/good_list.html`);
-// 	$(".list_dl4").load(`../utils/commonHtml/good_list.html`);
-// 	$(".list_dl5").load(`../utils/commonHtml/good_list.html`);
-// 	$(".list_dl6").load(`../utils/commonHtml/good_list.html`);
-// 	$(".list_dl7").load(`../utils/commonHtml/good_list.html`);
-// 	$(".list_dl8").load(`../utils/commonHtml/good_list.html`);
-// 	$(".list_dl9").load(`../utils/commonHtml/good_list.html`);
-// 	$(".list_dl10").load(`../utils/commonHtml/good_list.html`);
-// 	$(".list_dl11").load(`../utils/commonHtml/good_list.html`);
-// }
 function goodListLoad(){
 	//console.log("getProductServices()",getProductServices());
 	//getProductServices()???
 	getProductServices().then( (data)=>{
-		console.log("data.length===",data);
-		//$('<div class="good_list"></div>').appendTo($(".page_goods"));
-		//$('<dl class="list_dl"></dl>').appendTo($(".good_list"));
-		//$('<dt></dt>').appendTo($(".list_dl"));
-		//$('<img class="list_img" />').appendTo($("dt"));
-		//$(".list_img").attr("src",data[0].goodsListImg)
-		//$('<dd class="prada"></dd>').appendTo($(".list_dl"));
-		//$('<b class="prada_text"></b>').appendTo($(".prada"));
-		//$(".parda_text").text(data[0][7]);
-		//$('<p class="p_text fontSize"></p>').appendTo($(".prada"));
-		//$('.p_text').text(data[0].goodsName);
-		//$('<dd class="list_price space_between"></dd>').appendTo($(".list_dl"));
-		//$('<a class="fontSize list_a1"></a>').appendTo($(".list_price"));
-		//$('<span class="a1_span1"></span>').appendTo($(".list_a1"));
-		//$(".a1_span1").text("￥");
-		//$('<span class="a1_span2"></span>').appendTo($(".list_a1"));
-		//$(".a1_span2").text(data[0].price);
-		//$('<a class="fontSize list_a2"></a>').appendTo($(".list_price"));
-		//$('<span class="a2_span1"></span>').appendTo($(".list_a2"));
-		//$(".a2_span1").text("￥");
-		//$('<span class="a2_span2"></span>').appendTo($(".list_a2"));
-		//$(".a2_span2").text(data[0].price);
-			// $(".list_img").attr("src",data[0].goodsListImg)
-			// $(".parda_text").text(data[0][7]);
-			// $('.p_text').text(data[0].goodsName);
-			// $(".a1_span1").text("￥");
-			// $(".a1_span2").text(data[0].price);
-			// $(".a2_span1").text("￥");
-			// $(".a2_span2").text(data[0].price);
-		// for(let i=0;i<data.length;i++){
-		// 	//console.log(i);
-		// 	$(".list_img").attr("src",data[i].goodsListImg)
-		// 	$(".parda_text").text(data[i][7]);
-		// 	$('.p_text').text(data[i].goodsName);
-		// 	$(".a1_span1").text("￥");
-		// 	$(".a1_span2").text(data[i].price);
-		// 	$(".a2_span1").text("￥");
-		// 	$(".a2_span2").text(data[i].price);
-		// }
-		
+		//console.log("data.length===",data);
 		//清空数据
 		$(".good_list").html("");
 		//创建data.length个模板,这里有10个模板

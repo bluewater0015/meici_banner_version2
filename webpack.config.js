@@ -5,7 +5,9 @@ module.exports = {
 	entry: [
 		"webpack-dev-server/client?http://localhost:8080/",
 		"./src/index.js",
-		"./src/recent.js"
+		"./src/recent.js",
+		"./src/js/register.js",
+		"./src/js/login.js"
 	],
 	output: {
 		path: __dirname + "/dist/",
@@ -54,8 +56,8 @@ module.exports = {
 				]
 			}
 		]
-	}/*,
-	externals: {
-		jquery: "window.$"
-	}*/
+	},
+	// externals: {
+	// 	jquery: "window.$"
+	// }
 }

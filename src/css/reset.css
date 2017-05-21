@@ -11,12 +11,6 @@ a{
 input{
 	outline: none;
 }
-.bold{
-	font-weight: 900;
-}
-.fontSize{
-	font-size: 12px;
-}
 li{
 	font-size: 14px;
 }
